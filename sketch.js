@@ -11,7 +11,7 @@ var fps = 30;
 var fpsValue = fps;
 
 function setup() {
-	var myCanvas = createCanvas(600,innerHeight-110);
+	var myCanvas = createCanvas(innerHeight-110,innerHeight-110);
 	myCanvas.parent('game');
 	myCanvas.position(innerWidth/2-width/2,50);
 	background(20);
@@ -41,9 +41,9 @@ function setup() {
 	// Slider
 	fpsLabel = createP(fpsValue);
 	fpsLabel.style("color", "white");
-	fpsLabel.position((innerWidth/5-45),innerHeight-40);
+	fpsLabel.position((innerWidth/2-120),innerHeight-40);
 	fpsSlider = createSlider(4,60,fps,2);
-	fpsSlider.position(innerWidth/5,innerHeight-40);
+	fpsSlider.position(innerWidth/2-300,innerHeight-40);
 	fpsSlider.style('width', '160px');
 
 	// Make new Dice
