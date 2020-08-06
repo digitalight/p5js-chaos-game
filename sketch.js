@@ -10,6 +10,11 @@ var fpsLabel;
 var fps = 30;
 var fpsValue = fps;
 
+
+// TODOs:
+//	1- Make random vertex of initial triangle
+//  2- Set one random color for each vertex and paint each point with that color.
+
 function setup() {
 	var myCanvas = createCanvas(innerHeight-110,innerHeight-110);
 	myCanvas.parent('game');
