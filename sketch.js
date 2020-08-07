@@ -1,6 +1,9 @@
 var pointA;
 var pointB;
 var pointC;
+var colorA;
+var colorB;
+var colorC;
 var d;
 var dice;
 var run = false;
@@ -13,7 +16,9 @@ var fpsValue = fps;
 
 // TODOs:
 //	1- Make random vertex of initial triangle -> done
-//  2- Set one random color for each vertex and paint each point with that color.
+//  2- Set one random color for each vertex and paint each point with that color. -> done
+//	3- Set color in labels
+//  4- Write point names instead of dice result in status info
 
 function setup() {
 	var myCanvas = createCanvas(innerHeight-110,innerHeight-110);
@@ -24,22 +29,30 @@ function setup() {
 	frameRate(fps);
 
 	//Create Triangle
-	var Ax=Math.floor(Math.random() * width-10)+10; 
-	var Ay=Math.floor(Math.random() * height-10)+10;  
+	var Ax=floor(random() * width-10)+10; 
+	var Ay=floor(random() * height-10)+10;  
 	pointA = createVector(Ax, Ay);
 
-	var Bx=Math.floor(Math.random() * width-10)+10; 
-	var By=Math.floor(Math.random() * height-10)+10; 
+	var Bx=floor(random() * width-10)+10; 
+	var By=floor(random() * height-10)+10; 
 	pointB = createVector(Bx, By);
 
-	var Cx=Math.floor(Math.random() * width-10)+10; 
-	var Cy=Math.floor(Math.random() * height-10)+10; 
+	var Cx=floor(random() * width-10)+10; 
+	var Cy=floor(random() * height-10)+10; 
 	pointC = createVector(Cx, Cy);
 
+	//Set Random Colors, avoiding black
+	pointA.color=color(10+random(245),10+random(245),10+random(245))
+	pointB.color=color(10+random(245),10+random(245),10+random(245))
+	pointC.color=color(10+random(245),10+random(245),10+random(245))
+	
 	// Draw Triangle
 	strokeWeight(8);
+	stroke(pointA.color)
 	point(pointA.x, pointA.y);
+	stroke(pointB.color)
 	point(pointB.x, pointB.y);
+	stroke(pointC.color)
 	point(pointC.x, pointC.y);
 
 	// Text around Triangle
@@ -84,7 +97,8 @@ function draw() {
 
 
   		if (run == true) {
-  			d.display();
+			  
+			d.display();
 			d.halfway(dice.choice());
 			count++;
 			countLabel.html(nf(count,6,0));
