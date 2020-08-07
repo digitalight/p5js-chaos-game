@@ -14,11 +14,11 @@ var fps = 30;
 var fpsValue = fps;
 
 
-// TODOs:
-//	1- Make random vertex of initial triangle -> done
-//  2- Set one random color for each vertex and paint each point with that color. -> done
-//	3- Set color in labels -> done
-//  4- Color status info with the color of random point -> done
+// New Features:
+//	1- Make random vertex of initial triangle. 
+//  2- Set one random color for each vertex and paint each point with that color. 
+//	3- Set color in labels.
+//  4- Color status info with the color of random point.
 
 function setup() {
 	var myCanvas = createCanvas(innerHeight-110,innerHeight-110);
