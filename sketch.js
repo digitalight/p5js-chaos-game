@@ -17,7 +17,7 @@ var fpsValue = fps;
 // TODOs:
 //	1- Make random vertex of initial triangle -> done
 //  2- Set one random color for each vertex and paint each point with that color. -> done
-//	3- Set color in labels
+//	3- Set color in labels -> done
 //  4- Write point names instead of dice result in status info
 
 function setup() {
@@ -57,10 +57,12 @@ function setup() {
 
 	// Text around Triangle
 	noStroke();
-	fill(255);
 	textSize(24);
+	fill(pointA.color);
 	text("A", Ax-8, Ay-10);
+	fill(pointB.color);
 	text("B", Bx-8, By-10);
+	fill(pointC.color);
 	text("C", Cx-8, Cy-10);
 	stroke(255);
 
