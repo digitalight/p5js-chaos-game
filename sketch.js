@@ -18,7 +18,7 @@ var fpsValue = fps;
 //	1- Make random vertex of initial triangle -> done
 //  2- Set one random color for each vertex and paint each point with that color. -> done
 //	3- Set color in labels -> done
-//  4- Write point names instead of dice result in status info
+//  4- Color status info with the color of random point -> done
 
 function setup() {
 	var myCanvas = createCanvas(innerHeight-110,innerHeight-110);
@@ -101,9 +101,11 @@ function draw() {
   		if (run == true) {
 			  
 			d.display();
-			d.halfway(dice.choice());
+			pointRandom=dice.choice();
+			d.halfway(pointRandom);
 			count++;
 			countLabel.html(nf(count,6,0));
+			diceLabel.style('background-color',pointRandom.color);
 			diceLabel.html(dice.selected);
   		}
 }
