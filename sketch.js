@@ -12,7 +12,7 @@ var fpsValue = fps;
 
 
 // TODOs:
-//	1- Make random vertex of initial triangle
+//	1- Make random vertex of initial triangle -> done
 //  2- Set one random color for each vertex and paint each point with that color.
 
 function setup() {
@@ -24,9 +24,17 @@ function setup() {
 	frameRate(fps);
 
 	//Create Triangle
-	pointA = createVector(width/2, 60);
-	pointB = createVector(60, height - 60);
-	pointC = createVector(width-60, height-60);
+	var Ax=Math.floor(Math.random() * width-10)+10; 
+	var Ay=Math.floor(Math.random() * height-10)+10;  
+	pointA = createVector(Ax, Ay);
+
+	var Bx=Math.floor(Math.random() * width-10)+10; 
+	var By=Math.floor(Math.random() * height-10)+10; 
+	pointB = createVector(Bx, By);
+
+	var Cx=Math.floor(Math.random() * width-10)+10; 
+	var Cy=Math.floor(Math.random() * height-10)+10; 
+	pointC = createVector(Cx, Cy);
 
 	// Draw Triangle
 	strokeWeight(8);
@@ -38,9 +46,9 @@ function setup() {
 	noStroke();
 	fill(255);
 	textSize(24);
-	text("A", width/2-8, 40);
-	text("B", 30, height - 52);
-	text("C", width-40, height-52);
+	text("A", Ax-8, Ay-10);
+	text("B", Bx-8, By-10);
+	text("C", Cx-8, Cy-10);
 	stroke(255);
 
 	// Slider
