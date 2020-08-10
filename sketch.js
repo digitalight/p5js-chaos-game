@@ -69,11 +69,9 @@ function setup() {
 	// Slider
 	fpsLabel = createP(fpsValue);
 	fpsLabel.style("color", "white");
-	fpsLabel.position((innerWidth/2-120),innerHeight-40);
 	fpsSlider = createSlider(4,60,fps,2);
-	fpsSlider.position(innerWidth/2-300,innerHeight-40);
 	fpsSlider.style('width', '160px');
-
+	fpsLabel.style('font-size', 'small');
 	// Make new Dice
 	dice = new Dice;
 	d = new Dot;
@@ -84,11 +82,14 @@ function setup() {
 	diceLabel = select('#dice');
 	diceLabel.html("-");
 	startBtn = select('#start');
-	startBtn.position(innerWidth/2-60, 10)
+	startBtn.position(innerWidth/2-60, 10);
 	startBtn.mousePressed(toggleRun);
 	restartBtn = select('#restart');
-	restartBtn.position(innerWidth/2, 10)
+	restartBtn.position(innerWidth/2, 10);
 	restartBtn.mousePressed(restartGame);
+	fpsSlider.parent("slider");
+	fpsLabel.parent("sliderLabel");
+	
 }
 
 function draw() {
